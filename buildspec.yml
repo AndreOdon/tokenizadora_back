@@ -13,4 +13,5 @@ phases:
 artifacts:
     files:
         - '**/*'
+    name: Sample Application
 base-directory: build
