@@ -2,29 +2,6 @@
 # Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/ProjectEvaluation
-/.vs/tokenizadora_back/DesignTimeBuild/.dtbcache.v2
-/.vs/tokenizadora_back/FileContentIndex/2b03855f-9f52-4af1-b27e-128cb4b1abe5.vsidx
-/.vs/tokenizadora_back/FileContentIndex/e6cdd4fb-5775-4fb3-8cc0-577bc167b0ab.vsidx
-/.vs/tokenizadora_back/FileContentIndex/a880f7f6-6270-4d95-9bbb-1f32d2972ec0.vsidx
-/.vs/tokenizadora_back/v17/.suo
-/API/bin/Debug/net6.0/API.deps.json
-/API/bin/Debug/net6.0
-/API/obj/Container
-/API/obj/Debug/net6.0/ref/API.dll
-/API/obj/Debug/net6.0/refint/API.dll
-/API/obj/Debug/net6.0/staticwebassets
-/API/obj/Debug/net6.0/staticwebassets.build.json
-/API/obj/Debug/net6.0/apphost.exe
-/API/obj/Debug/net6.0/API.pdb
-/API/obj/Debug/net6.0/API.MvcApplicationPartsAssemblyInfo.cs
-/API/obj/Debug/net6.0/API.MvcApplicationPartsAssemblyInfo.cache
-/API/obj/Debug/net6.0/API.genruntimeconfig.cache
-/API/obj/Debug/net6.0/API.dll
-/API/obj/Debug/net6.0/API.csproj.FileListAbsolute.txt
-/API/obj/Debug/net6.0/API.csproj.CoreCompileInputs.cache
-/API/obj/Debug/net6.0/API.csproj.CopyComplete
-/API/obj/Debug/net6.0/API.csproj.BuildWithSkipAnalyzers
-/API/obj/Debug/net6.0/API.csproj.AssemblyReference.cache
-/API/obj/Debug/net6.0/API.assets.cache
+/.vs
+/API/bin/
 /API/obj
