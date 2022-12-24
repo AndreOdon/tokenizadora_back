@@ -5,3 +5,12 @@
 /.vs
 /API/bin/
 /API/obj
+/Application/obj
+/Domain/bin/Debug/net6.0
+/Domain/obj
+/Infra.DataBase/bin/Debug/net6.0
+/Infra.DataBase/obj
+/Tests/obj
+/Application/bin/Debug/net6.0
+/TestResults
+/Tests/bin/Debug/net6.0

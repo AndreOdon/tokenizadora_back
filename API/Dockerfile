@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS build
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
