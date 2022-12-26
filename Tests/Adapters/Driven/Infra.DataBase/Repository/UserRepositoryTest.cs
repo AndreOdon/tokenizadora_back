@@ -1,4 +1,5 @@
 ﻿using Domain.Dto;
+using Domain.Dto.Result;
 using Infra.DataBase.Repository;
 using Tests.Adapters.Driven.Infra.DataBase.ContextMock;
 
@@ -22,7 +23,6 @@ namespace Tests.Adapters.Driven.Infra.DataBase.Repository
             }.ToEntity();
 
             await _repository.AddAsync(userEntity);
-            await _repository.SaveChangesAsync();
         }
 
         [TestCase("USERTEST")]

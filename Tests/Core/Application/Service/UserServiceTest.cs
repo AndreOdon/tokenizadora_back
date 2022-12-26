@@ -1,6 +1,7 @@
 ﻿using Application.Services;
 using Application.Util;
-using Domain.Dto;
+using Domain.Dto.Input;
+using Domain.Dto.Result;
 using Domain.Entities;
 using Domain.Interfaces.Adapters.Infra.DataBase;
 using Domain.Interfaces.Core.Application;

@@ -1,4 +1,4 @@
-﻿using Domain.Dto;
+﻿using Domain.Dto.Result;
 using Domain.Entities;
 
 namespace Tests.Core.Domain.Dto

@@ -3,8 +3,8 @@ using Domain.Dto.Result;
 
 namespace Domain.Interfaces.Core.Application
 {
-    public interface IUserService
+    public interface IPlanService
     {
-        Task<UserDto?> Login(UserLoginInputDto inputDto);
+        Task<CalcResultDto> Calc(CalcInputDto calcInputDto);
     }
 }

@@ -13,8 +13,8 @@ namespace Infra.DataBase.EntityConfiguration
             builder.Property(x => x.OriginRegionId).IsRequired();
             builder.Property(x => x.Tax).IsRequired();
 
-            builder.HasOne(x => x.Origin).WithMany(x => x.IsOrigin).HasForeignKey(x => x.OriginRegionId);
-            builder.HasOne(x => x.Destiny).WithMany().HasForeignKey(x => x.DestinyRegionId);
+            builder.HasOne(x => x.Origin).WithMany(x => x.IsOrigin).HasForeignKey(x => x.OriginRegionId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(x => x.Destiny).WithMany().HasForeignKey(x => x.DestinyRegionId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
