@@ -18,6 +18,12 @@ namespace Infra.DataBase.Repository
         public async Task AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
+            await SaveChangesAsync();
+        }
+
+        public async Task<T?> GetById(int id)
+        {
+            return await _dbSet.SingleOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task SaveChangesAsync()

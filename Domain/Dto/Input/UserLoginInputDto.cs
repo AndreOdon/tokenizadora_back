@@ -1,4 +1,4 @@
-﻿namespace Domain.Dto
+﻿namespace Domain.Dto.Input
 {
     public class UserLoginInputDto
     {

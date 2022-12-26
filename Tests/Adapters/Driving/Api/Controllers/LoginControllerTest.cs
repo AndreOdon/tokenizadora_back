@@ -1,14 +1,10 @@
 ﻿using API.Controllers;
 using Application.Services;
 using Application.Util;
-using Domain.Dto;
+using Domain.Dto.Input;
+using Domain.Dto.Result;
 using Infra.DataBase.Repository;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tests.Adapters.Driven.Infra.DataBase.ContextMock;
 
 namespace Tests.Adapters.Driving.Api.Controllers
@@ -31,7 +27,6 @@ namespace Tests.Adapters.Driving.Api.Controllers
             }.ToEntity();
 
             await userRepository.AddAsync(userEntity);
-            await userRepository.SaveChangesAsync();
 
             var userService = new UserService(userRepository);
             _loginController = new LoginController(userService);

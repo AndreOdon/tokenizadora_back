@@ -1,4 +1,5 @@
-﻿using Domain.Dto;
+﻿using Domain.Dto.Input;
+using Domain.Dto.Result;
 using Domain.Interfaces.Core.Application;
 using Microsoft.AspNetCore.Mvc;
 

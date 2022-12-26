@@ -6,5 +6,6 @@ namespace Domain.Interfaces.Adapters.Infra.DataBase
     {
         Task AddAsync(T entity);
         Task SaveChangesAsync();
+        Task<T?> GetById(int id);
     }
 }
