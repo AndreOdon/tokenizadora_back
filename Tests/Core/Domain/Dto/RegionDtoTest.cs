@@ -21,5 +21,23 @@ namespace Tests.Core.Domain.Dto
             Assert.That(entity.Name, Is.EqualTo(dto.Name));
             Assert.That(entity.Code, Is.EqualTo(dto.Code));
         }
+
+        [Test]
+        public void FromEntity_ReturnsValidRegionDto()
+        {
+            var entity = new RegionDto()
+            {
+                Name = "Region Test",
+                Code = "001"
+            }.ToEntity();
+
+            var dto = RegionDto.FromEntity(entity);
+
+            Assert.IsNotNull(dto);
+            Assert.That(dto, Is.TypeOf<RegionDto>());
+            Assert.That(dto.Name, Is.EqualTo(entity.Name));
+            Assert.That(dto.Code, Is.EqualTo(entity.Code));
+            Assert.That(dto.Id, Is.EqualTo(entity.Id));
+        }
     }
 }

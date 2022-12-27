@@ -21,6 +21,11 @@ namespace Infra.DataBase.Repository
             await SaveChangesAsync();
         }
 
+        public async Task<List<T>> GetAll()
+        {
+            return await _dbSet.ToListAsync();
+        }
+
         public async Task<T?> GetById(int id)
         {
             return await _dbSet.SingleOrDefaultAsync(x => x.Id == id);
