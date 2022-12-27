@@ -11,6 +11,9 @@ namespace Infra.DataBase
         public static void AddDataBaseModule(this IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IRegionRepository, RegionRepository>();
+            services.AddScoped<IRegionTaxRepository, RegionTaxRepository>();
+            services.AddScoped<IPlanRepository, PlanRepository>();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Domain.Dto;
+﻿using Domain.Dto.Result;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Entities

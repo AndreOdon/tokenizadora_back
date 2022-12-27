@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace Domain.Dto
+namespace Domain.Dto.Result
 {
     public class UserDto
     {

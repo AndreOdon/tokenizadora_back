@@ -1,4 +1,5 @@
-﻿using Domain.Dto;
+﻿using Domain.Dto.Input;
+using Domain.Dto.Result;
 
 namespace Domain.Interfaces.Core.Application
 {

@@ -1,5 +1,5 @@
 ﻿using Application.Util;
-using Domain.Dto;
+using Domain.Dto.Result;
 
 namespace Tests.Core.Application.Util
 {
