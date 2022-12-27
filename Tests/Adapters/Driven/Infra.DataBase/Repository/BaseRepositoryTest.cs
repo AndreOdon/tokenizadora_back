@@ -67,5 +67,39 @@ namespace Tests.Adapters.Driven.Infra.DataBase.Repository
             Assert.IsNotNull(newEntity.Id);
             Assert.That(newEntity.Id, Is.Not.EqualTo(0));
         }
+
+        [Test]
+        public async Task GetAll_ReturnEntityList()
+        {
+            var entity1 = new UserDto()
+            {
+                Name = "User Test 1",
+                UserName = "usertest1",
+                Password = "test1",
+            }.ToEntity();
+            await _repository.AddAsync(entity1);
+
+            var entity2 = new UserDto()
+            {
+                Name = "User Test 2",
+                UserName = "usertest2",
+                Password = "test2",
+            }.ToEntity();
+            await _repository.AddAsync(entity2);
+
+            var entity3 = new UserDto()
+            {
+                Name = "User Test 3",
+                UserName = "usertest3",
+                Password = "test3",
+            }.ToEntity();
+            await _repository.AddAsync(entity3);
+
+            var result = await _repository.GetAll();
+
+            Assert.IsNotNull(result);
+            Assert.That(result, Is.TypeOf<List<User>>());
+            Assert.That(result, Has.Count.EqualTo(4));
+        }
     }
 }

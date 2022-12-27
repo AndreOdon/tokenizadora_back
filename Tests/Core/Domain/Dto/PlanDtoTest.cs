@@ -10,7 +10,7 @@ namespace Tests.Core.Domain.Dto
         {
             var dto = new PlanDto()
             {
-                Name = "Region Test",
+                Name = "Plan Test",
                 Minutes = 10
             };
 
@@ -20,6 +20,24 @@ namespace Tests.Core.Domain.Dto
             Assert.That(entity, Is.TypeOf<Plan>());
             Assert.That(entity.Name, Is.EqualTo(dto.Name));
             Assert.That(entity.Minutes, Is.EqualTo(dto.Minutes));
+        }
+
+        [Test]
+        public void FromEntity_ReturnsValidPlanDto()
+        {
+            var entity = new PlanDto()
+            {
+                Name = "Plan Test",
+                Minutes = 10
+            }.ToEntity();
+
+            var dto = PlanDto.FromEntity(entity);
+
+            Assert.IsNotNull(dto);
+            Assert.That(dto, Is.TypeOf<PlanDto>());
+            Assert.That(dto.Name, Is.EqualTo(entity.Name));
+            Assert.That(dto.Minutes, Is.EqualTo(entity.Minutes));
+            Assert.That(dto.Id, Is.EqualTo(entity.Id));
         }
     }
 }

@@ -3,8 +3,6 @@ using Domain.Dto.Input;
 using Domain.Dto.Result;
 using Domain.Entities;
 using Domain.Interfaces.Adapters.Infra.DataBase;
-using Infra.DataBase.Repository;
-using Microsoft.AspNetCore.Components.Forms;
 using NSubstitute;
 
 namespace Tests.Core.Application.Service
@@ -80,8 +78,6 @@ namespace Tests.Core.Application.Service
             await _regionTaxRepository.Received(1).GetByOriginDestiny(input.OriginId, input.DestinyId);
         }
 
-
-
         [TestCase(20, 0, 38)]
         [TestCase(30, 0, 57)]
         [TestCase(40, 20.9, 76)]
@@ -119,6 +115,39 @@ namespace Tests.Core.Application.Service
             Assert.IsNull(result.Error);
             await _planRepository.Received(1).GetById(input.PlanId);
             await _regionTaxRepository.Received(1).GetByOriginDestiny(input.OriginId, input.DestinyId);
+        }
+
+        [Test]
+        public async Task GetAll_ReturnsListValidPlanDto()
+        {
+            var planEntity1 = new PlanDto()
+            {
+                Name = "Test 1",
+                Minutes = 30
+            }.ToEntity();
+            var planEntity2 = new PlanDto()
+            {
+                Name = "Test 2",
+                Minutes = 60
+            }.ToEntity();
+            var planEntity3 = new PlanDto()
+            {
+                Name = "Test ",
+                Minutes = 120
+            }.ToEntity();
+
+            var entityList = new List<Plan>();
+            entityList.Add(planEntity1);
+            entityList.Add(planEntity2);
+            entityList.Add(planEntity3);
+
+            _planRepository.GetAll().Returns(Task.FromResult<List<Plan>>(entityList));
+
+            var result = await _planService.GetAllPlans();
+
+            Assert.IsNotNull(result);
+            Assert.That(result, Is.TypeOf<List<PlanDto>>());
+            Assert.That(result, Has.Count.EqualTo(3));
         }
     }
 }

@@ -23,6 +23,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDataBaseModule();
 builder.Services.AddApplicationModule();
 
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -35,6 +40,8 @@ using (var scope = app.Services.CreateScope())
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.UseCors("corsapp");
 
 app.UseHttpsRedirection();
 

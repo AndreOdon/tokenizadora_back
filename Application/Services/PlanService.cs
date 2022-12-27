@@ -42,6 +42,13 @@ namespace Application.Services
             return result;
         }
 
+        public async Task<List<PlanDto>> GetAllPlans()
+        {
+            var plans = await _planRepository.GetAll();
+
+            return plans.Select(x => PlanDto.FromEntity(x)).ToList();
+        }
+
         private decimal CalcValueWithPlan(int planMinutes, int minutesUsed, decimal tax)
         {
             if (minutesUsed <= planMinutes)

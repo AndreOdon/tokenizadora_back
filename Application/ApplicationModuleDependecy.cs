@@ -12,6 +12,7 @@ namespace Application
         {
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IPlanService, PlanService>();
+            services.AddScoped<IRegionService, RegionService>();
         }
     }
 }
